@@ -31,5 +31,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: webapp
-        path: Tailspin\website
+        path: Tailspin/website/**
         if-no-files-found: warn
