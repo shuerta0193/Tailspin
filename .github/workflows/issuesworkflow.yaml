@@ -3,7 +3,7 @@ on:
   issues:
     types:
       - labeled
-	    - opened
+      - opened
 jobs:
   get-issue-info:
     if: github.event.label.name == 'check'
@@ -13,5 +13,4 @@ jobs:
     steps:
       - name: Add comment
         run: |
-	        echo ${{ github.event.issue.body }}
-	        echo ${{ github.event.issue.title }}
+	echo 'Body ${{ github.event.issue.body }}'
