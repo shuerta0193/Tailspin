@@ -11,6 +11,5 @@ jobs:
     permissions:
       issues: write
     steps:
-      - name: Add comment
-        run: |
-	  echo 'Body ${{ github.event.issue.body }}'
+      - name: Read body
+        run: echo 'Body ${{ github.event.issue.body }}'
