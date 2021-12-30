@@ -6,7 +6,7 @@ on:
       - opened
 jobs:
   get-issue-info:
-    if: github.event.label.name == 'check'
+    if: github.event.label.name == 'checked'
     runs-on: ubuntu-latest
     permissions:
       issues: write
