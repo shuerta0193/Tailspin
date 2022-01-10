@@ -23,10 +23,10 @@ jobs:
       - name: Create file
         run:  |
           cd Tailspin.SpaceGame.Web
-          touch $TITLE.md
-          echo "---" >> $TITLE.md
-          echo ' $BODY ' >> $TITLE.md
-          echo "---"" >> $TITLE.md
+          touch ${{env.TITLE}}.md
+          echo "---" >> ${{env.TITLE}}.md
+          echo " ${{env.BODY}}" >> ${{env.TITLE}}.md
+          echo "---"" >> ${{env.TITLE}}.md
       - name: setup git config
         run: |
           git config user.name "GitHub Actions Bot"
