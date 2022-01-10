@@ -25,7 +25,7 @@ jobs:
           cd Tailspin.SpaceGame.Web
           touch ${{env.TITLE}}.md
           echo "---" >> ${{env.TITLE}}.md
-          echo " ${{env.BODY}}" >> ${{env.TITLE}}.md
+          echo " ${{env.TITLE}}" >> ${{env.TITLE}}.md
           echo "---"" >> ${{env.TITLE}}.md
       - name: setup git config
         run: |
