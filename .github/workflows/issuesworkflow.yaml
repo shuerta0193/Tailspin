@@ -13,7 +13,7 @@ jobs:
       contents: write
       pull-requests: write
     env:
-      TITLE: ${{ github.event.issue.title }}
+      TITLE: ${{ github.event.issue.id }}
     steps:
       - name: Read body
         run: echo 'Body ${{ github.event.issue.body }}'
