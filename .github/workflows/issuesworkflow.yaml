@@ -10,6 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write
+      contents: write
+      pull-requests: write
     steps:
       - name: Read body
         run: echo 'Body ${{ github.event.issue.body }}'
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Create file
+        run: touch newFile.txt
+      - name: stage changes
+        run: git add .
+      - name: commit changes
+        run: git commit -m "adding new file"
+      - name: push new file
+        run: git push orgin HEAD:master
