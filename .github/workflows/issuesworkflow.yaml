@@ -23,7 +23,7 @@ jobs:
           touch addedfile.txt
           echo "---" >> addedfile.txt
           echo "title: ${{ github.event.issue.body }}" >> addedfile.txt
-          echo "author: "Microsoft" >> addedfile.txt
+          echo "author: "Microsoft"" >> addedfile.txt
           echo "categories:" >> addedfile.txt
       - name: setup git config
         run: |
