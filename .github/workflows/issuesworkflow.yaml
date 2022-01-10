@@ -16,7 +16,7 @@ jobs:
       - name: Read body
         run: echo 'Body ${{ github.event.issue.body }}'
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
       - name: Create file
         run: touch newFile.txt
       - name: setup git config
