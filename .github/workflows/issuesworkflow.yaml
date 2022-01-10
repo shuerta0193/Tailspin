@@ -24,7 +24,7 @@ jobs:
           cd Tailspin.SpaceGame.Web
           touch $TITLE.md
           echo "---" >> $TITLE.md
-          echo "\${{ github.event.issue.body }}" >> $TITLE.md
+          echo "${{ github.event.issue.body }}" >> $TITLE.md
           echo "---"" >> $TITLE.md
       - name: setup git config
         run: |
