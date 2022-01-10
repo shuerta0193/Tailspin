@@ -12,7 +12,27 @@ jobs:
       issues: write
       contents: write
       pull-requests: write
+    env:
+      TITLE: ${{ github.event.issue.body }}
     steps:
       - name: Read body
-        run: echo 'Body ${{ github.event.issue.body}}'
-      
+        run: echo 'Body ${{ github.event.issue.body }}'
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Create file
+        run:  |
+          cd Tailspin.SpaceGame.Web
+          touch $TITLE.md
+          echo "---" >> $TITLE.txt
+          echo "\${{ github.event.issue.body }}" >> $TITLE.md
+          echo "---"" >> $TITLE.md
+      - name: setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+      - name: stage changes
+        run: git add .
+      - name: commit changes
+        run: git commit -m "adding new file"
+      - name: push new file
+        run: git push origin HEAD:main
