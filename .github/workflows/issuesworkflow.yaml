@@ -29,4 +29,4 @@ jobs:
       - name: commit changes
         run: git commit -m "adding new file"
       - name: push new file
-        run: git push orgin HEAD:main
+        run: git push origin HEAD:main
