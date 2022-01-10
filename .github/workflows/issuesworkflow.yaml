@@ -14,5 +14,5 @@ jobs:
       pull-requests: write
     steps:
       - name: Read body
-        run: echo 'Body ${{ github.event.issue.body.description}}'
+        run: echo 'Body ${{ github.event.issue.body}}'
       
