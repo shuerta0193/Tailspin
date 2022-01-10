@@ -14,6 +14,7 @@ jobs:
       pull-requests: write
     env:
       TITLE: ${{ github.event.issue.id }}
+      BODY: ${{ github.event.issue.body }}
     steps:
       - name: Read body
         run: echo 'Body ${{ github.event.issue.body }}'
@@ -24,7 +25,7 @@ jobs:
           cd Tailspin.SpaceGame.Web
           touch $TITLE.md
           echo "---" >> $TITLE.md
-          echo ${{ github.event.issue.body }} >> $TITLE.md
+          echo ' $BODY ' >> $TITLE.md
           echo "---"" >> $TITLE.md
       - name: setup git config
         run: |
