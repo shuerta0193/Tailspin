@@ -29,6 +29,7 @@ jobs:
           "TITLE: $title" >> ${{env.FILENAME}}.md
           "CATEGORY: $category" >> ${{env.FILENAME}}.md
           "---" >> ${{env.FILENAME}}.md
+        shell: pwsh
       - name: setup git config
         run: |
           git config user.name "GitHub Actions Bot"
