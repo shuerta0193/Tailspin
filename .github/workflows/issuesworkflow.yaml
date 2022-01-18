@@ -24,7 +24,7 @@ jobs:
         run:  |
           cd Tailspin.SpaceGame.Web
           New-item -Path . -Name "${{env.FILENAME}}.md" 
-          $title, $description, $category, $author, $tags, $image, $contentlink = (${{env.BODY}} -split "\\n\\n")[1,3,5,7,9,11,13]
+          $title, $description, $category, $author, $tags, $image, $contentlink = (${{env.BODY}} -split "\n\n")[1,3,5,7,9,11,13]
           $title
           $description
           "---" >> ${{env.FILENAME}}.md
