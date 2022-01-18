@@ -26,4 +26,4 @@ jobs:
           New-item -Path . -Name "${{env.FILENAME}}.md"
           $content = ${{env.BODY}}
           $content.GetType()
-          
+        shell: pwsh
