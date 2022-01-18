@@ -24,5 +24,6 @@ jobs:
         run:  |
           cd Tailspin.SpaceGame.Web
           New-item -Path . -Name "${{env.FILENAME}}.md"
-          ${{env.BODY}}.GetType()
+          $content = ${{env.BODY}}
+          $content.GetType()
           
