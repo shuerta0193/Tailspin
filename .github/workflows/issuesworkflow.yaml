@@ -24,6 +24,6 @@ jobs:
         run:  |
           cd Tailspin.SpaceGame.Web
           New-item -Path . -Name "${{env.FILENAME}}.md"
-          $content = ${{env.BODY}}
+          $content = "${{env.BODY}}"
           $content.GetType()
         shell: pwsh
