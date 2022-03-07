@@ -51,3 +51,5 @@ jobs:
         run: git commit -m "adding new file"
       - name: push new file
         run: gh pr create --title "New Content Submission ${{env.FILENAME}}" --body "Review changes for ${{env.FILENAME}}" --base main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
