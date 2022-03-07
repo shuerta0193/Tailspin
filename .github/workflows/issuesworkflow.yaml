@@ -22,8 +22,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Create branch
         run: |
-          git branch newissue
-          git checkout newissue
+          git checkout branch newissue-${{env.FILENAME}}
       - name: Create file
         run:  |
           cd Tailspin.SpaceGame.Web
@@ -48,7 +47,9 @@ jobs:
       - name: stage changes
         run: git add .
       - name: commit changes
-        run: git commit -m "adding new file"
+        run: |
+          git commit -m "adding new file"
+          git push -u origin newissue-${{env.FILENAME}}
       - name: push new file
         run: gh pr create --title "New Content Submission ${{env.FILENAME}}" --body "Review changes for ${{env.FILENAME}}" --base main
         env:
