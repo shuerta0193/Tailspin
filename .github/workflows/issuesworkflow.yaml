@@ -20,6 +20,10 @@ jobs:
         run: echo 'Body ${{ github.event.issue.body }}'
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Create branch
+        run: |
+          git branch newissue
+          git checkout newissue
       - name: Create file
         run:  |
           cd Tailspin.SpaceGame.Web
