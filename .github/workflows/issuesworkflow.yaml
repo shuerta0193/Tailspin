@@ -50,4 +50,4 @@ jobs:
       - name: commit changes
         run: git commit -m "adding new file"
       - name: push new file
-        run: git push origin HEAD:main
+        run: gh pr create --title "New Content Submission ${{env.FILENAME}}" --body "Review changes for ${{env.FILENAME}}" --base main
