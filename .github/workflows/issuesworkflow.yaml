@@ -52,6 +52,6 @@ jobs:
           git commit -m "adding new file"
           git push -u origin newissue-${{env.FILENAME}}
       - name: push new file
-        run: gh pr create --title "New LINK Content Submission ${{env.FILENAME}}" --body "Review changes for //#${{env.ISSUEID}}" --base main
+        run: gh pr create --title "New LINK Content Submission ${{env.FILENAME}}" --body "Review changes for #${{env.ISSUEID}}" --base main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
