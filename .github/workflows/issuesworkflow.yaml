@@ -28,13 +28,13 @@ jobs:
       - name: Create file
         run:  |
           cd Tailspin.SpaceGame.Web
-          $date = Get-Date -UFormat "%F"
-          $issuetitle = ${{env.FILENAME}} -replace " ",""
-          $filename = $date + "-" + $issuetitle
-          New-item -Path . -Name "${{env.FILENAME}}.md"
           $content = "${{env.BODY}}"
           $title, $description, $category, $author, $tags, $image, $contentlink = ($content -split "\n\n")[1,3,5,7,9,11,13]
           $title
+          $date = Get-Date -UFormat "%F"
+          $issuetitle = $title -replace " ",""
+          $filename = $date + "-" + $issuetitle
+          New-item -Path . -Name "$filename.md"
           "---" >> $filename.md
           "title: $title" >> $filename.md
           "author: $author" >> $filename.md
@@ -54,7 +54,7 @@ jobs:
       - name: commit changes
         run: |
           git commit -m "adding new file"
-          git push -u origin newissue-${{env.FILENAME}}
+          git push -u origin newissue-${{env.ISSUEID}}
       - name: push new file
         run: gh pr create --title "New LINK Content Submission ${{env.FILENAME}}" --body "${{env.PRBODY}}" --base main
         env:
