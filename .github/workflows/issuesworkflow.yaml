@@ -35,15 +35,15 @@ jobs:
           $issuetitle = $title -replace " ",""
           $filename = $date + "-" + $issuetitle
           New-item -Path . -Name "$filename.md"
-          "---" >> $filename.md
-          "title: $title" >> $filename.md
-          "author: $author" >> $filename.md
-          "categories: $category" >> $filename.md
-          "tags: [$tags]" >> $filename.md
-          "description: $description" >> $filename.md
-          "image: $image" >> $filename.md
-          "solution_url: $contentlink" >> $filename.md
-          "---" >> $filename.md
+          "---" >> "$filename.md"
+          "title: $title" >> "$filename.md"
+          "author: $author" >> "$filename.md"
+          "categories: $category" >> "$filename.md"
+          "tags: [$tags]" >> "$filename.md"
+          "description: $description" >> "$filename.md"
+          "image: $image" >> "$filename.md"
+          "solution_url: $contentlink" >> "$filename.md"
+          "---" >> "$filename.md"
         shell: pwsh
       - name: setup git config
         run: |
