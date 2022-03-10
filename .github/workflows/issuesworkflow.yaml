@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Create branch
         run: |
-          git checkout -b newissue-${{env.FILENAME}}
+          git checkout -b newissue-${{env.ISSUEID}}
       - name: Create file
         run:  |
           cd Tailspin.SpaceGame.Web
